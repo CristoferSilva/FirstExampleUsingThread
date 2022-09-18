@@ -3,7 +3,7 @@ using FirstExampleUsingThread;
 using System.Diagnostics;
 
 
-MainApp mainApp = new MainApp();
+AppsManager mainApp = new AppsManager();
 string optionFromUser = "";
 Console.WriteLine("******** WELCOME TO OLIMPO PROGRAM MANAGER ********\n");
 
