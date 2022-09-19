@@ -1,26 +1,25 @@
 ﻿using System.Diagnostics;
 using System.Threading;
+using FirstExampleUsingThread.Base;
 
-namespace FirstExampleUsingThread.process
+namespace FirstExampleUsingThread.Process
 {
-    public class InternetExplorerProcess
+    public class InternetExplorerProcess : ProcessBase
     {
-        public int Times { get; }
-        public Semaphore Semaphore { get; set; }
+        public override int Times { get; }
+        public override State State { get; set; }
+        public override string ProcessName { get; set; } = "iexplore.exe";
 
-        public InternetExplorerProcess(int times, Semaphore semaphore)
+        public InternetExplorerProcess(int times)
         {
             Times = times;
-            Semaphore = semaphore;
         }
-        public void ExecuteInternetExplorer()
+        public override void OpenProgram()
         {
-            Semaphore.WaitOne();
             for (int i = 0; i < Times; i++)
             {
-                Process.Start("C:\\Program Files\\Internet Explorer\\iexplore.exe");
+                System.Diagnostics.Process.Start("C:\\Program Files\\Internet Explorer\\iexplore.exe");
             }
-            Semaphore.Release();
         }
     }
 }

@@ -1,8 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "Ih4fjj4VyoIsRI7HhF+vyt48CqbK+2hPX0TupPXnhS+8HFSqzVIglVO9O3qzuVhOAW6V0Q/8IWZYHYimUFvOyg==",
+  "dgSpecHash": "vAtPHxaOF61SL0TNx70J4kA3ZR3OJl7i4R3SpNNQQogL5Istb3Tu05hUXobtRj/sS92pX/CbZ6y+NKkClJ5fIw==",
   "success": true,
   "projectFilePath": "C:\\Users\\crist\\source\\repos\\FirstExampleUsingThread\\FirstExampleUsingThread\\FirstExampleUsingThread.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\crist\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "C:\\Users\\crist\\.nuget\\packages\\microsoft.netcore.targets\\1.1.0\\microsoft.netcore.targets.1.1.0.nupkg.sha512",
+    "C:\\Users\\crist\\.nuget\\packages\\system.collections\\4.3.0\\system.collections.4.3.0.nupkg.sha512",
+    "C:\\Users\\crist\\.nuget\\packages\\system.runtime\\4.3.0\\system.runtime.4.3.0.nupkg.sha512"
+  ],
   "logs": []
 }

@@ -15,6 +15,7 @@ do
 
 } while (optionFromUser.Equals("Y"));
 
+
 static string CheckerUserInput()
 {
     string optionFromUser = Console.ReadLine().ToUpper();

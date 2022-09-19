@@ -4,28 +4,25 @@ using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using FirstExampleUsingThread.Base;
 
-namespace FirstExampleUsingThread.process
+namespace FirstExampleUsingThread.Process
 {
-    public class NotepadProcess
+    public class NotepadProcess : ProcessBase
     {
-        public int Times { get; }
-        public Semaphore Semaphore { get; }
-
-        public NotepadProcess(int times, Semaphore semaphore)
+        public override int Times { get; }
+        public override State State { get; set; }
+        public override string ProcessName { get; set; } = "notepad.exe";
+        public NotepadProcess(int times)
         {
             Times = times;
-            Semaphore = semaphore;
         }
-
-        public void ExecuteNotepad()
+        public override void OpenProgram()
         {
-            Semaphore.WaitOne();
             for (int i = 0; i < Times; i++)
             {
-                Process.Start("notepad.exe");
+                System.Diagnostics.Process.Start("notepad.exe");
             }
-            Semaphore.Release();
         }
     }
 }

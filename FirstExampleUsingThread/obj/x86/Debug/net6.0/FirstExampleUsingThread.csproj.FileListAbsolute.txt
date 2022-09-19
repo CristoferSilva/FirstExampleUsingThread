@@ -1,0 +1,15 @@
+C:\Users\crist\source\repos\FirstExampleUsingThread\FirstExampleUsingThread\bin\x86\Debug\net6.0\FirstExampleUsingThread.exe
+C:\Users\crist\source\repos\FirstExampleUsingThread\FirstExampleUsingThread\bin\x86\Debug\net6.0\FirstExampleUsingThread.deps.json
+C:\Users\crist\source\repos\FirstExampleUsingThread\FirstExampleUsingThread\bin\x86\Debug\net6.0\FirstExampleUsingThread.runtimeconfig.json
+C:\Users\crist\source\repos\FirstExampleUsingThread\FirstExampleUsingThread\bin\x86\Debug\net6.0\FirstExampleUsingThread.dll
+C:\Users\crist\source\repos\FirstExampleUsingThread\FirstExampleUsingThread\bin\x86\Debug\net6.0\FirstExampleUsingThread.pdb
+C:\Users\crist\source\repos\FirstExampleUsingThread\FirstExampleUsingThread\obj\x86\Debug\net6.0\FirstExampleUsingThread.csproj.AssemblyReference.cache
+C:\Users\crist\source\repos\FirstExampleUsingThread\FirstExampleUsingThread\obj\x86\Debug\net6.0\FirstExampleUsingThread.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\crist\source\repos\FirstExampleUsingThread\FirstExampleUsingThread\obj\x86\Debug\net6.0\FirstExampleUsingThread.AssemblyInfoInputs.cache
+C:\Users\crist\source\repos\FirstExampleUsingThread\FirstExampleUsingThread\obj\x86\Debug\net6.0\FirstExampleUsingThread.AssemblyInfo.cs
+C:\Users\crist\source\repos\FirstExampleUsingThread\FirstExampleUsingThread\obj\x86\Debug\net6.0\FirstExampleUsingThread.csproj.CoreCompileInputs.cache
+C:\Users\crist\source\repos\FirstExampleUsingThread\FirstExampleUsingThread\obj\x86\Debug\net6.0\FirstExampleUsingThread.dll
+C:\Users\crist\source\repos\FirstExampleUsingThread\FirstExampleUsingThread\obj\x86\Debug\net6.0\refint\FirstExampleUsingThread.dll
+C:\Users\crist\source\repos\FirstExampleUsingThread\FirstExampleUsingThread\obj\x86\Debug\net6.0\FirstExampleUsingThread.pdb
+C:\Users\crist\source\repos\FirstExampleUsingThread\FirstExampleUsingThread\obj\x86\Debug\net6.0\FirstExampleUsingThread.genruntimeconfig.cache
+C:\Users\crist\source\repos\FirstExampleUsingThread\FirstExampleUsingThread\obj\x86\Debug\net6.0\ref\FirstExampleUsingThread.dll

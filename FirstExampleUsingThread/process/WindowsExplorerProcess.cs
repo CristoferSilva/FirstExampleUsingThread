@@ -4,28 +4,26 @@ using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using FirstExampleUsingThread.Base;
 
-namespace FirstExampleUsingThread.process
+namespace FirstExampleUsingThread.Process
 {
-    public class WindowsExplorerProcess
+    public class WindowsExplorerProcess : ProcessBase
     {
-        public int Times { get; }
-        public Semaphore Semaphore { get; }
+        public override int Times { get; }
+        public override State State { get; set; }
+        public override string ProcessName { get; set; } = "explorer.exe";
 
-        public WindowsExplorerProcess(int times, Semaphore semaphore)
+        public WindowsExplorerProcess(int times)
         {
             Times = times;
-            Semaphore = semaphore;
         }
-        public void ExecuteWindowsExplorer()
+        public override void OpenProgram()
         {
-            Semaphore.WaitOne();
             for (int i = 0; i < Times; i++)
             {
-                Process.Start("explorer.exe");
+                System.Diagnostics.Process.Start("explorer.exe");
             }
-            Semaphore.Release();
-
         }
     }
 }

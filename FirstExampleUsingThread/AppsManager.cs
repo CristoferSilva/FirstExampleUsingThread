@@ -4,13 +4,13 @@ using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using FirstExampleUsingThread.process;
+using FirstExampleUsingThread.Semaphore;
+using FirstExampleUsingThread.Process;
 
 namespace FirstExampleUsingThread
 {
     public class AppsManager
     {
-        private Semaphore semaphore;
         private InternetExplorerProcess internetExplorerProcess;
         private WindowsExplorerProcess windowsExplorerProcess;
         private NotepadProcess notepadProcess;
@@ -20,7 +20,7 @@ namespace FirstExampleUsingThread
 
         public AppsManager()
         {
-            semaphore = new Semaphore(0, 2);
+            SemaphoreImplementation.InitSemaphoreImplementation(2);
         }
         private async Task CallAppsAndCountTheTime()
         {
@@ -37,7 +37,7 @@ namespace FirstExampleUsingThread
 
             Times = int.Parse(Console.ReadLine());
 
-            InitializeProcessInstances(Times, semaphore);
+            InitializeProcessInstances(Times);
 
             PrintOptionsMenuToUser();
 
@@ -57,13 +57,13 @@ namespace FirstExampleUsingThread
                     OpenAllProgramWithoutThreads();
                     break;
                 case "N":
-                    notepadProcess.ExecuteNotepad();
+                    notepadProcess.Execute();
                     break;
                 case "E":
-                    windowsExplorerProcess.ExecuteWindowsExplorer();
+                    windowsExplorerProcess.Execute();
                     break;
                 case "I":
-                    internetExplorerProcess.ExecuteInternetExplorer();
+                    internetExplorerProcess.Execute();
                     break;
                 default:
                     Console.WriteLine("I didn't understand that! ARE YOU LEIGO?");
@@ -73,24 +73,16 @@ namespace FirstExampleUsingThread
         }
         private void OpenAllProgramWithoutThreads()
         {
-            notepadProcess.ExecuteNotepad();
-            windowsExplorerProcess.ExecuteWindowsExplorer();
-            internetExplorerProcess.ExecuteInternetExplorer();
+            notepadProcess.Execute();
+            windowsExplorerProcess.Execute();
+            internetExplorerProcess.Execute();
         }
 
         private void OpenAllProgramsUsingThreads()
         {
-            Thread threadNotepad = new Thread(notepadProcess.ExecuteNotepad);
-            Thread threadWindowsExplorer = new Thread(windowsExplorerProcess.ExecuteWindowsExplorer);
-            Thread threadInternetExplorer = new Thread(internetExplorerProcess.ExecuteInternetExplorer);
-
-            threadNotepad.Start();
-            threadWindowsExplorer.Start();
-            threadInternetExplorer.Start();
-
-            Console.WriteLine(semaphore.Release(1));
-
-
+            SemaphoreImplementation.DownProcess(notepadProcess);
+            SemaphoreImplementation.DownProcess(windowsExplorerProcess);
+            SemaphoreImplementation.DownProcess(internetExplorerProcess);
         }
 
         private void PrintTimeSpan(Stopwatch stopwatch)
@@ -104,15 +96,15 @@ namespace FirstExampleUsingThread
             Console.WriteLine("  type N to -> notepad");
             Console.WriteLine("  type E to -> explorer");
             Console.WriteLine("  type I to -> Internet Explorer");
-            Console.WriteLine("  type AT to -> All programs using threads");
+            Console.WriteLine("  type AT to -> All programs using threads through semaphore");
             Console.WriteLine("  type AN to -> All programs without threads");
         }
 
-        private void InitializeProcessInstances(int times, Semaphore semaphore)
+        private void InitializeProcessInstances(int times)
         {
-            this.internetExplorerProcess = new InternetExplorerProcess(times, semaphore);
-            this.windowsExplorerProcess = new WindowsExplorerProcess(times, semaphore);
-            this.notepadProcess = new NotepadProcess(times, semaphore);
+            this.internetExplorerProcess = new InternetExplorerProcess(times);
+            this.windowsExplorerProcess = new WindowsExplorerProcess(times);
+            this.notepadProcess = new NotepadProcess(times);
         }
     }
 }
